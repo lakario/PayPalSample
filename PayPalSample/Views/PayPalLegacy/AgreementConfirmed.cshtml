@@ -1,0 +1,16 @@
+﻿@model PayPalSample.Models.AgreementConfirmedViewData
+@{
+    ViewBag.Title = "Billing Agreement Confirmed";
+}
+
+<h2>Billing Agreement Confirmed</h2>
+
+<form action="@Url.Action("CancelAgreement")" method="post">
+    <input type="hidden" name="billingAgreementId" value="@Model.BillingAgreementId" />
+    <button type="submit">Cancel Billing Agreement</button>
+</form>
+
+<ul  class="menu">
+    <li><a href="@Url.Action("CreateOrder")">Place an Order</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

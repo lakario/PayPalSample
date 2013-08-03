@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Create Payment";
+}
+
+<h2>Create Payment</h2>
+
+<form action="@Url.Action("CreatePayment")" method="post">
+    <div>
+        @Html.Label("Description")
+        @Html.TextBox("Description", null, new { required = "required" })
+    </div>
+    <div>
+        @Html.Label("Price")
+        @Html.TextBox("Price", null, new { required = "required" })
+    </div>
+    <div>
+        @Html.Label("Tax")
+        @Html.TextBox("Tax")
+    </div>
+    <div>
+        @Html.Label("Shipping")
+        @Html.TextBox("Shipping")
+    </div>
+    <button type="submit">Create Payment</button>
+</form>
+
+<ul class="menu">
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

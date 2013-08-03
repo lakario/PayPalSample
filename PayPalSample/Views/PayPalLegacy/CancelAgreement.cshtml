@@ -1,0 +1,19 @@
+﻿@model PayPalSample.Models.CancelAgreementViewData
+@{
+    ViewBag.Title = "Cancel Billing Agreement";
+}
+
+<h2>Cancel Billing Agreement</h2>
+
+<form action="@Url.Action("CancelAgreement")" method="post">
+    <div>
+        <label for="billingAgreementId">Billing Agreement Id</label>
+        <input type="text" name="billingAgreementId" id="billingAgreementId" value="@Model.BillingAgreementId" required="required" />
+    </div>
+    <button type="submit">Cancel Billing Agreement</button>
+</form>
+
+<ul  class="menu">
+    <li><a href="@Url.Action("CreateOrder")">Place an Order</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

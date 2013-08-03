@@ -1,0 +1,44 @@
+﻿@model PayPalSample.Models.PayPalViewData
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/site.css")" />
+</head>
+<body>
+    <h1>PayPal API Sample</h1>
+    
+    @RenderBody()
+    
+    @Html.ValidationSummary()
+    
+    @if (Model != null && Model.Message != null) {
+        <h3>Message</h3> 
+        <p>@Model.Message</p>
+    }
+    
+    @if (Model != null && Model.ErrorMessage != null) {
+        <h3>Error message</h3> 
+        <p>@Model.ErrorMessage</p>
+    }
+
+    @if (Model != null && Model.JsonRequest != null) {
+        <h3>JSON Request</h3>
+        <pre>@Model.JsonRequest</pre>
+    }
+
+    @if (Model != null && Model.JsonResponse != null) {
+        <h3>JSON Response</h3>
+        <pre>@Model.JsonResponse</pre>
+    }
+    
+    <div class="footer-menu">
+        <a href="@Url.Action("Index", "PayPal")">REST API</a> |
+        <a href="@Url.Action("Index", "PayPalLegacy")">Legacy API</a>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@model PayPalSample.Models.PayPalViewData
+@{
+    ViewBag.Title = "Order Successful";
+}
+
+<h2>Order Successful</h2>
+
+<p>
+    Congratulations on your purchase! Your money is now my money. 
+<p/>
+
+<ul class="menu">
+    <li><a href="@Url.Action("CreatePayment")">Create Payment</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "View Transaction";
+}
+
+<h2>View Transaction</h2>
+
+<form action="@Url.Action("TransactionDetails")" method="get">
+    <div>
+        <label for="transactionId">Trasaction Id</label>
+        <input type="text" name="transactionId" id="transactionId" required="required" />
+    </div>
+    <button type="submit">View Transaction</button>
+</form>

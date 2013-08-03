@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Void Order";
+}
+
+<h2>Void Order</h2>
+
+<form action="@Url.Action("VoidOrder")" method="post">
+    <div>
+        <label for="authorizationId">Authorization Id</label>
+        <input type="text" name="authorizationId" id="authorizationId" required="required" />
+    </div>
+    <button type="submit">Void Order</button>
+</form>
+
+<ul  class="menu">
+    <li><a href="@Url.Action("CreateOrder")">Place an Order</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

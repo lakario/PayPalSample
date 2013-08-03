@@ -1,0 +1,26 @@
+﻿@model PayPalSample.Models.TransactionViewData
+
+<div>
+    <h3>Transaction Details</h3>
+    
+    <div>
+        <label>Id:</label>
+        <span>@Model.TransactionId</span>
+    </div>
+    <div>
+        <label>Payer:</label>
+        <span>@Model.Payer</span>
+    </div>
+    <div>
+        <label>Date:</label>
+        <span>@Model.DateTime</span>
+    </div>
+    <div>
+        <label>Status:</label>
+        <span>@Model.Status</span>
+    </div>
+    <div>
+        <label>Total:</label>
+        <span>@Model.Total.ToString("C2")</span>
+    </div>
+</div>

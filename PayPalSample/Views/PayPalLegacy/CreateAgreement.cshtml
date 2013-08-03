@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Create Billing Agreement";
+}
+
+<h2>Create Billing Agreement</h2>
+
+<form action="@Url.Action("AuthorizeAgreement")" method="post">
+    <button type="submit">Proceed to PayPal to Confirm Billing Agreement</button>
+</form>
+
+<ul  class="menu">
+    <li><a href="@Url.Action("CreateOrder")">Place an Order</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

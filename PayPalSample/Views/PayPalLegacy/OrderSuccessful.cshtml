@@ -1,0 +1,15 @@
+﻿@model PayPalSample.Models.OrderConfirmedViewData
+@{
+    ViewBag.Title = "Order Successful";
+}
+
+<h2>Order Successful</h2>
+
+@if (Model.TransactionId != null) {
+    @Html.Action("TransactionDetails", new { transactionId = Model.TransactionId })
+}
+
+<ul  class="menu">
+    <li><a href="@Url.Action("CreateOrder")">Place an Order</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

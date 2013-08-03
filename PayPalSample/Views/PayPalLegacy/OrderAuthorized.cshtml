@@ -1,0 +1,25 @@
+﻿@model PayPalSample.Models.AuthorizedViewData
+@{
+    ViewBag.Title = "Order Authorized";
+}
+
+<h2>Order Authorized</h2>
+
+@if (Model.AuthorizationId != null) {
+    @Html.Action("TransactionDetails", new { transactionId = Model.AuthorizationId })
+}
+
+<form action="@Url.Action("CaptureOrder")" method="post">
+    <input type="hidden" name="authorizationId" value="@Model.AuthorizationId" />
+    <button type="submit">Finalize Order</button>
+</form>
+
+<form action="@Url.Action("VoidOrder")" method="post">
+    <input type="hidden" name="authorizationId" value="@Model.AuthorizationId" />
+    <button type="submit">Void Order</button>
+</form>
+
+<ul  class="menu">
+    <li><a href="@Url.Action("CreateOrder")">Place an Order</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>

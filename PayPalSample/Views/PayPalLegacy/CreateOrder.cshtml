@@ -1,0 +1,27 @@
+﻿@model PayPalSample.Models.CreateOrderViewData
+@{
+    ViewBag.Title = "Create Reference Transaction";
+}
+
+<h2>Create Reference Transaction</h2>
+
+<form action="@Url.Action("CreateOrder")" method="post">
+    <div>
+        <label for="billingAgreementId">Billing Agreement Id</label>
+        <input type="text" name="billingAgreementId" id="billingAgreementId" value="@Model.BillingAgreementId" required="required" />
+    </div>
+    <div>
+        <label for="amount">Price</label>
+        <input type="text" name="amount" id="amount" value="5.00" required="required" />
+    </div>
+    <div>
+        <label for="capture">Capture payment?</label>
+        <input type="checkbox" name="capture" id="capture" checked="checked" value="true" />
+    </div>
+    <button type="submit">Create Order</button>
+</form>
+
+<ul class="menu">
+    <li><a href="@Url.Action("CreateAgreement")">Create Agreement</a></li>
+    <li><a href="@Url.Action("Index")">Start Over</a></li>
+</ul>
